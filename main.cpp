@@ -10,7 +10,7 @@
 //TODO: 
 //1- add the functionality to write to a file[]
 //2- add the insert mode [x] handle the backspace[x]
-//3- find another way to clear the console to reduce flickering []
+//3- manage the state by updating only the parts modified[] 
 //4- consider seprating into a class [x], delete and defualt the constructors[]
 //5- highlight the current character, use the bash coloring [x]
 //6- move to a singleton [x]
