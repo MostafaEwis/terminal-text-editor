@@ -12,7 +12,7 @@ private:
 		currentLine = 0;
 		currentChar = 0;
 		startLine = 0;
-		maxWindow = 46;
+		maxWindow = 46 - 1;
 		openFile(path);
 		printText();
 		navigate();
@@ -127,6 +127,24 @@ public:
 						fileLines.insert(fileLines.begin() + currentLine + 1, after);
 						currentChar = 0;
 						currentLine++;
+					}
+					break;
+				case '\b':
+					//if currentChar is at position zero and you backspace append
+					//	append the rest to the previous line and delete the line
+					if(currentChar == 0){
+							if(currentLine != 0){
+								//move the current character to the end of the previous line,
+								//which will be the start of the current line
+								int posMargin = fileLines[currentLine].empty() ? 1 : 0;
+								currentChar = fileLines[currentLine - 1].size() - posMargin;
+								fileLines[currentLine - 1].append(fileLines[currentLine]);
+								fileLines.erase(fileLines.begin() + currentLine);
+								currentLine--;
+							}
+					}else{
+						fileLines[currentLine].erase(currentChar - 1, 1);
+						currentChar--;
 					}
 					break;
 				case ':':

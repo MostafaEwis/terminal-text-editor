@@ -9,12 +9,12 @@
 
 //TODO: 
 //1- add the functionality to write to a file[]
-//2- add the insert mode [~] handle the backspace[]
+//2- add the insert mode [x] handle the backspace[x]
 //3- find another way to clear the console to reduce flickering []
 //4- consider seprating into a class [x], delete and defualt the constructors[]
 //5- highlight the current character, use the bash coloring [x]
 //6- move to a singleton [x]
-//7- navigating the current character doesn't work properly []
+//7- moving up and down doesn't always render the position of currentChar correctly []
 //8- search for syntax highlighting []
 //9- get the window dimensions to show lines properly[]
 int main(int argc, char** argv){
